@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан «ИМПЕРСКИЙ» | DASHOGUZ</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #0d0d0d;
+            --accent: #c0392b;
+            --card: #1a1a1a;
+            --text: #ffffff;
+            --gray: #999;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Playfair Display', serif, Arial;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Плавная анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+            text-align: center;
+        }
+
+        header h1 { font-size: 3.5rem; color: var(--gold); margin: 0; letter-spacing: 5px; }
+        header p { font-size: 1.2rem; color: var(--gray); margin-top: 10px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        .category-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 50px 0 30px;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+
+        .food-item {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            transition: 0.3s;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .food-item:hover {
+            border-left-color: var(--gold);
+            background: #222;
+            transform: scale(1.02);
+        }
+
+        .item-name { font-size: 1.2rem; font-weight: bold; color: var(--gold); margin-bottom: 5px; }
+        .item-desc { font-size: 0.85rem; color: var(--gray); min-height: 40px; }
+        .item-price { font-size: 1.1rem; font-weight: bold; margin-top: 10px; color: #fff; }
+
+        /* КНОПКИ */
+        .order-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px;
+            margin: 40px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+        }
+
+        .fab {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #27ae60;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        @media (max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ИМПЕРСКИЙ</h1>
+        <p>Дашогуз • Традиции • Вкус</p>
+    </header>
+
+    <div class="container">
+        <a href="tel:+99362759331" class="order-btn">ЗАБРОНИРОВАТЬ СТОЛ: 62759331</a>
+
+        <div class="category-title">Холодные закуски</div>
+        <div class="menu-grid">
+            <div class="food-item">
+                <div class="item-name">Сельдь под шубой</div>
+                <div class="item-desc">Классический слоеный салат с печеной свеклой.</div>
+                <div class="item-price">45 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Грузди в сметане</div>
+                <div class="item-desc">Соленые лесные грибы с домашней сметаной и луком.</div>
+                <div class="item-price">65 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Холодец из говядины</div>
+                <div class="item-desc">Наваристый холодец, подается с хреном и горчицей.</div>
+                <div class="item-price">55 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Ассорти солений</div>
+                <div class="item-desc">Огурцы, томаты и капуста бочкового посола.</div>
+                <div class="item-price">40 TMT</div>
+            </div>
+        </div>
+
+        <div class="category-title">Первые блюда</div>
+        <div class="menu-grid">
+            <div class="food-item">
+                <div class="item-name">Борщ с говядиной</div>
+                <div class="item-desc">С чесночными пампушками и копченым салом.</div>
+                <div class="item-price">50 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Уха По-Царски</div>
+                <div class="item-desc">Из семги и судака на прозрачном бульоне.</div>
+                <div class="item-price">85 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Щи кислые</div>
+                <div class="item-desc">Традиционные щи из квашеной капусты в горшочке.</div>
+                <div class="item-price">45 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Суп-лапша</div>
+                <div class="item-desc">Домашняя лапша на курином бульоне с потрошками.</div>
+                <div class="item-price">40 TMT</div>
+            </div>
+        </div>
+
+        <div class="category-title">Горячее</div>
+        <div class="menu-grid">
+            <div class="food-item">
+                <div class="item-name">Бефстроганов</div>
+                <div class="item-desc">Тонкая нарезка говядины в сливочно-грибном соусе.</div>
+                <div class="item-price">95 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Пельмени Сибирские</div>
+                <div class="item-desc">Ручная лепка, подаются с маслом или уксусом.</div>
+                <div class="item-price">60 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Котлета По-Киевски</div>
+                <div class="item-desc">С сочной начинкой из ароматного масла и зелени.</div>
+                <div class="item-price">75 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Жаркое в горшочке</div>
+                <div class="item-desc">Томленая говядина с картофелем и грибами.</div>
+                <div class="item-price">80 TMT</div>
+            </div>
+        </div>
+
+        <div class="category-title">Десерты и Напитки</div>
+        <div class="menu-grid">
+            <div class="food-item">
+                <div class="item-name">Блины с медом</div>
+                <div class="item-desc">Тонкие ажурные блины (3 шт.) со свежим медом.</div>
+                <div class="item-price">35 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Медовик</div>
+                <div class="item-desc">Многослойный торт по старинному рецепту.</div>
+                <div class="item-price">45 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Морс брусничный</div>
+                <div class="item-desc">Освежающий напиток из натуральных ягод.</div>
+                <div class="item-price">20 TMT</div>
+            </div>
+            <div class="food-item">
+                <div class="item-name">Чай из самовара</div>
+                <div class="item-desc">Травяной сбор с баранками и вареньем.</div>
+                <div class="item-price">30 TMT</div>
+            </div>
+        </div>
+
+        <a href="tel:+99362759331" class="order-btn">ПОЗВОНИТЬ АДМИНИСТРАТОРУ</a>
+    </div>
+
+    <a href="tel:+99362759331" class="fab">📞</a>
+
+    <footer style="text-align: center; padding: 40px; color: var(--gray); background: #000;">
+        <p>© 2026 Ресторан «ИМПЕРСКИЙ» — г. Дашогуз</p>
+    </footer>
+
+</body>
+</html>
